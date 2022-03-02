@@ -8,6 +8,10 @@
 	<h1>Result</h1>
     <p th:text="'You entered ' + ${generator}+' numbers to generate!'"></p>
     <p th:text="'Here are ' + ${listOfRandomNumbers}+' numbers randomly generated!'"></p>
+    <ul th:each="numVal : ${randNumsResult}">
+        <li th:text="${numVal}"></li>
+        <img th:src="@{${'/images/' +  numVal}}" width=200 height=200/>
+</ul>
     <a href="/generator">Submit again!</a>
 </body>
 </html>
